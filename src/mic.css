@@ -1,0 +1,65 @@
+.mircophone-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .microphone-icon-container {
+    border-radius: 50%;
+    background-color: #1F2937;
+    /* background-image: linear-gradient(128deg, #1F2937, #4A77B5); */
+    padding: 20px;
+    margin-right: 20px;
+    position: relative;
+    cursor: pointer;
+  }
+  .microphone-icon-container.listening::before {
+    content: "";
+    background-color: #ffffff81;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform:translate(-50%, -50%) scale(1.4);
+    border-radius: 50%;
+    animation: listening infinite 1.5s;
+  }
+  @keyframes listening{
+    0%{
+      opacity: 1;
+      transform: translate(-50%, -50%) scale(1);
+    }
+    100%{
+      opacity: 0;
+      transform: translate(-50%, -50%) scale(1.4);
+    }
+  }
+  .microphone-icon {
+    width: 100%;
+    height: 100%;
+    filter: invert(1);
+  }
+  .microphone-status {
+    font-size: 26px;
+    margin-right: 20px;
+    font-weight: bold;
+  }
+  .microphone-result-container {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 24px;
+    font-weight: 500;
+  
+  }
+  .microphone-result-text {
+    margin-bottom: 30px;
+    width: 70vw;
+    overflow-y: auto;
+  }
+  .microphone-reset {
+    border: 1px solid #fff;
+    background: none;
+    color: white;
+    width: fit-content;
+}
